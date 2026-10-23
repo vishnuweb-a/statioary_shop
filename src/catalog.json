@@ -1,0 +1,326 @@
+[
+  {
+    "id": "sticky-notes-multicolour-3x3",
+    "name": "Sticky Notes Multicolour \u2014 3\u00d73 Inch (40 Sheets \u00d7 3 Colours)",
+    "category": 5,
+    "price": 50,
+    "mrp": 75,
+    "image": "/assets/sticky-notes-multicolour.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/sticky-notes-multicolour.jpg"
+  },
+  {
+    "id": "sticky-notes-yellow-3x3",
+    "name": "Sticky Notes Yellow \u2014 3\u00d73 Inch (100 Sheets)",
+    "category": 5,
+    "price": 45,
+    "mrp": 65,
+    "image": "/assets/sticky-notes-yellow.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/sticky-notes-yellow.jpg"
+  },
+  {
+    "id": "college-hustle-kit",
+    "name": "College Hustle Kit",
+    "category": 4,
+    "price": 749,
+    "mrp": 999,
+    "image": "/assets/college-hustle-kit.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/college-hustle-kit.jpg"
+  },
+  {
+    "id": "professional-productivity-kit",
+    "name": "Professional Productivity Kit",
+    "category": 4,
+    "price": 749,
+    "mrp": 999,
+    "image": "/assets/productivity-kit.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/productivity-kit.jpg"
+  },
+  {
+    "id": "corporate-diary-planner-kit",
+    "name": "Corporate Diary & Planner Kit",
+    "category": 4,
+    "price": 399,
+    "mrp": 549,
+    "image": "/assets/corporate-diary-kit.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/corporate-diary-kit.jpg"
+  },
+  {
+    "id": "office-starter-combo",
+    "name": "Office Starter Combo",
+    "category": 4,
+    "price": 549,
+    "mrp": 749,
+    "image": "/assets/office-starter-combo.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/office-starter-combo.jpg"
+  },
+  {
+    "id": "display-book-40-pockets",
+    "name": "Display Book \u2014 40 Pockets",
+    "category": 3,
+    "price": 149,
+    "mrp": 219,
+    "image": "/assets/display-book.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/display-book.jpg"
+  },
+  {
+    "id": "portfolio-handle-bag-a3",
+    "name": "Portfolio Handle Bag \u2014 A3 Size",
+    "category": 3,
+    "price": 650,
+    "mrp": 899,
+    "image": "/assets/portfolio-bag-a3.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/portfolio-bag-a3.jpg"
+  },
+  {
+    "id": "cb-825-portfolio-folder-10",
+    "name": "CB-825 Executive Portfolio Folder \u2014 10 Leaves",
+    "category": 3,
+    "price": 299,
+    "mrp": 420,
+    "image": "/assets/cb825-folder.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/cb825-folder.jpg"
+  },
+  {
+    "id": "my-sketch-book-a4",
+    "name": "My Sketch Book A4 \u2014 50 Sheets",
+    "category": 2,
+    "price": 130,
+    "mrp": 185,
+    "image": "/assets/sketch-book-a4.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/sketch-book-a4.jpg"
+  },
+  {
+    "id": "canvas-pad-painting-a4",
+    "name": "Canvas Pad for Painting \u2014 A4",
+    "category": 2,
+    "price": 249,
+    "mrp": 349,
+    "image": "/assets/canvas-pad.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/canvas-pad.jpg"
+  },
+  {
+    "id": "white-cartridge-paper-a4",
+    "name": "White Cartridge Paper A4 \u2014 25 Sheets (140 GSM)",
+    "category": 2,
+    "price": 90,
+    "mrp": 130,
+    "image": "/assets/cartridge-paper.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/cartridge-paper.jpg"
+  },
+  {
+    "id": "account-book-lb-register-no5",
+    "name": "Account Book \u2014 L/B Register Size No. 5 (320 Pages)",
+    "category": 1,
+    "price": 420,
+    "mrp": 549,
+    "image": "/assets/account-book-register.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/account-book-register.jpg"
+  },
+  {
+    "id": "account-book-register-size-no4",
+    "name": "Account Book \u2014 Register Size No. 4 (256 Pages)",
+    "category": 1,
+    "price": 280,
+    "mrp": 380,
+    "image": "/assets/account-book-register.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/account-book-register.jpg"
+  },
+  {
+    "id": "legacy-notebook-b5",
+    "name": "Legacy Notebook B5 \u2014 Round Corner Foam Padding",
+    "category": 0,
+    "price": 340,
+    "mrp": 450,
+    "image": "/assets/legacy-notebook-b5.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/legacy-notebook-b5.jpg"
+  },
+  {
+    "id": "premium-notebook-b5-five-subject",
+    "name": "Premium Notebook B5 \u2014 Five Subject",
+    "category": 0,
+    "price": 295,
+    "mrp": 399,
+    "image": "/assets/premium-notebook-b5.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/premium-notebook-b5.jpg"
+  },
+  {
+    "id": "pearl-notebook-a4",
+    "name": "Pearl Notebook A4 Softcover",
+    "category": 0,
+    "price": 65,
+    "mrp": 99,
+    "image": "/assets/pearl-notebook-a4.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/pearl-notebook-a4.jpg"
+  },
+  {
+    "id": "slip-pad-no-33",
+    "name": "Slip Pad No. 33 \u2014 Ruled & Plain",
+    "category": 0,
+    "price": 45,
+    "mrp": 65,
+    "image": "/assets/slip-pad-no-33.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/slip-pad-no-33.jpg"
+  },
+  {
+    "id": "sticky-notes-multicolour-100",
+    "name": "Sticky Notes Multicolour \u2014 100 Sheets (Mixed Colours)",
+    "category": 5,
+    "price": 70,
+    "mrp": 99,
+    "image": "/assets/sticky-notes-multicolour.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/sticky-notes-multicolour.jpg"
+  },
+  {
+    "id": "sticky-notes-yellow-2x3",
+    "name": "Sticky Notes Yellow \u2014 2\u00d73 Inch (100 Sheets)",
+    "category": 5,
+    "price": 35,
+    "mrp": 50,
+    "image": "/assets/sticky-notes-yellow.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/sticky-notes-yellow.jpg"
+  },
+  {
+    "id": "new-year-new-goals-kit",
+    "name": "New Year, New Goals Kit",
+    "category": 4,
+    "price": 999,
+    "mrp": 1399,
+    "image": "/assets/new-year-goals-kit.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/new-year-goals-kit.jpg"
+  },
+  {
+    "id": "teachers-everyday-desk-kit",
+    "name": "Teacher's Everyday Desk Kit",
+    "category": 4,
+    "price": 699,
+    "mrp": 949,
+    "image": "/assets/teachers-desk-kit.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/teachers-desk-kit.jpg"
+  },
+  {
+    "id": "conference-folder-with-notepad",
+    "name": "Conference Folder with Notepad",
+    "category": 3,
+    "price": 249,
+    "mrp": 349,
+    "image": "/assets/conference-folder.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/conference-folder.jpg"
+  },
+  {
+    "id": "display-book-20-pockets",
+    "name": "Display Book \u2014 20 Pockets",
+    "category": 3,
+    "price": 99,
+    "mrp": 149,
+    "image": "/assets/display-book.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/display-book.jpg"
+  },
+  {
+    "id": "cb-825-portfolio-folder-20",
+    "name": "CB-825 Executive Portfolio Folder \u2014 20 Leaves",
+    "category": 3,
+    "price": 385,
+    "mrp": 525,
+    "image": "/assets/cb825-folder.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/cb825-folder.jpg"
+  },
+  {
+    "id": "crafty-drawing-book-cs01",
+    "name": "Crafty Drawing Book CS 01",
+    "category": 2,
+    "price": 60,
+    "mrp": 90,
+    "image": "/assets/crafty-drawing-book.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/crafty-drawing-book.jpg"
+  },
+  {
+    "id": "fluorescent-paper-a4",
+    "name": "Fluorescent Paper A4 \u2014 Pack of 25 Sheets",
+    "category": 2,
+    "price": 85,
+    "mrp": 125,
+    "image": "/assets/fluorescent-paper.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/fluorescent-paper.jpg"
+  },
+  {
+    "id": "ivory-paper-a4",
+    "name": "Ivory Paper A4 \u2014 25 Sheets (220 GSM)",
+    "category": 2,
+    "price": 135,
+    "mrp": 190,
+    "image": "/assets/ivory-paper.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/ivory-paper.jpg"
+  },
+  {
+    "id": "coloured-paper-a3-pack-20",
+    "name": "Coloured Paper A3 \u2014 Pack of 20 Sheets",
+    "category": 2,
+    "price": 120,
+    "mrp": 169,
+    "image": "/assets/coloured-paper.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/coloured-paper.jpg"
+  },
+  {
+    "id": "coloured-paper-a4-pack-20",
+    "name": "Coloured Paper A4 \u2014 Pack of 20 Sheets",
+    "category": 2,
+    "price": 75,
+    "mrp": 110,
+    "image": "/assets/coloured-paper.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/coloured-paper.jpg"
+  },
+  {
+    "id": "paper-block-memo-pad",
+    "name": "Paper Block Memo Pad",
+    "category": 1,
+    "price": 75,
+    "mrp": 110,
+    "image": "/assets/memo-pad.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/memo-pad.jpg"
+  },
+  {
+    "id": "writeup-pad-a4",
+    "name": "WriteUp Pad A4",
+    "category": 1,
+    "price": 85,
+    "mrp": 120,
+    "image": "/assets/writeup-pad-a4.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/writeup-pad-a4.jpg"
+  },
+  {
+    "id": "duplicate-book-no2",
+    "name": "Duplicate Book No. 2 \u2014 With Carbon & Index",
+    "category": 1,
+    "price": 150,
+    "mrp": 210,
+    "image": "/assets/duplicate-book-no2.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/duplicate-book-no2.jpg"
+  },
+  {
+    "id": "duplicate-book-no1",
+    "name": "Duplicate Book No. 1 \u2014 With Carbon & Index",
+    "category": 1,
+    "price": 85,
+    "mrp": 120,
+    "image": "/assets/duplicate-book-no1.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/duplicate-book-no1.jpg"
+  },
+  {
+    "id": "account-book-copy-size-no2",
+    "name": "Account Book \u2014 Copy Size No. 2 (256 Pages)",
+    "category": 1,
+    "price": 175,
+    "mrp": 239,
+    "image": "/assets/account-book-copy.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/account-book-copy.jpg"
+  },
+  {
+    "id": "account-book-register-size-no2",
+    "name": "Account Book \u2014 Register Size No. 2 (128 Pages)",
+    "category": 1,
+    "price": 180,
+    "mrp": 249,
+    "image": "/assets/account-book-register.jpg",
+    "url": "https://product-images-xgroww.s3.us-east-1.amazonaws.com/lekhan/account-book-register.jpg"
+  }
+]
