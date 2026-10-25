@@ -1,6 +1,6 @@
-# Lekhan — Everyday Creative storefront
+# Lekhan — Inspired Everyday storefront
 
-A React + TypeScript frontend prototype based on the selected second design direction: pale blue, navy, warm yellow, friendly typography, photographic stationery, and a complete simulated shopping journey.
+A React + TypeScript frontend prototype redesigned from the supplied warm editorial reference: ivory, forest green, sage, coral accents, serif headlines, sunlit photography, and a complete simulated shopping journey.
 
 ## Start
 
@@ -17,7 +17,7 @@ npm run build
 npm run test:sites
 ```
 
-The production build is in `dist/client`. The included worker and metadata support future Sites hosting. This prototype has not been published.
+The production build is in `dist/client`. The included worker and metadata support future Sites hosting. The prototype is published at https://lekhan-creative-storefront.mythicrhea64.chatgpt.site.
 
 ## Screens
 
@@ -64,15 +64,16 @@ There is no backend, authentication service, payment gateway, email delivery, st
 
 - Reference inspected: https://lekhan.e-comtag.com/ — desktop homepage, collection pages and product details.
 - Product names, prices, categories, and photos were read from the reference catalog. Source URLs are retained in `src/catalog.json`. Reference product photos are copied locally for prototype reliability and require appropriate permission before production reuse.
-- Three new hero/editorial photographs were generated to match the selected visual direction. See `public/assets/hero.png`, `college.png`, and `art.png`.
-- Icons: Phosphor React. Fonts: Manrope and DM Sans (Google Fonts, with local fallback stacks).
+- Three new hero/editorial photographs were generated to match the selected visual direction. See `public/assets/hero-warm.png`, `planner-warm.png`, and `creative-warm.png`.
+- Icons: Phosphor React. Fonts: DM Serif Display and DM Sans (Google Fonts, with local fallback stacks).
 - Responsive CSS covers desktop, tablet and phone sizes. Main prototype screens were checked inside browser frames of 390px and 834px. Native mobile/touch device testing and mobile reference inspection remain pending, as agreed.
 
 ## Structure
 
 - `src/App.tsx`: typed app, shared product cards, image fallback, quantity controls, address form, order summary, and page components.
 - `src/catalog.json`: reference product data.
-- `src/styles.css`: consistent design tokens, layouts, states and responsive rules.
+- `src/styles.css`: base layouts, states and responsive rules.
+- `src/theme.css`: complete warm editorial theme and matching responsive layouts.
 - `public/assets`: actual catalog photos and generated editorial images.
 - `public/review.html`: internal viewport frame for visual QA; not part of customer navigation.
 - `design-qa.md`: verification findings and evidence references.

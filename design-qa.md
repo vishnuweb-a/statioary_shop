@@ -1,92 +1,61 @@
-# Lekhan storefront — design QA
+# Lekhan warm editorial redesign — visual QA
 
 final result: passed
 
-## Visual target and evidence
+## Source and implementation
 
-- Selected source: `/workspace/scratch/d11cbd8da2c4/generated_images/exec-2b3096e4-88b0-4aaf-b1bc-f98d04eebe4f.png` (second displayed ideation result).
-- Source pixels: 1435 × 1096.
-- Implementation: cloud browser, local running Vite app; main desktop CSS viewport 1363 × 936. Matched comparison used a same-origin frame of 1435 × 1096 CSS px, rendered at scale 0.8 so the whole frame fits the cloud browser.
-- Density normalization: source resized to 1148 × 877; implementation extracted from the frame screenshot at 1148 × 877. Source and implementation are shown side-by-side in one comparison input. No stretching across aspect ratios.
-- Final matched screenshot: `/workspace/scratch/lekhan-matched-frame-v2.jpg`.
-- Full-view comparison: `qa/desktop-comparison-v2.jpg` (opened and inspected).
-- Focused comparison: `qa/hero-comparison.jpg`; hero typography, primary CTA, spacing, product-photo crop and editorial tiles were reviewed at readable scale through the source and the actual desktop capture.
-- State: home, light theme, mock account with one saved favourite. The non-zero wishlist badge differs intentionally from the source's empty state.
-- Further browser evidence: `qa/screen-review.jpg`, `qa/responsive-review.jpg`, individual desktop/mobile captures. QA screenshots are internal evidence and excluded from the downloadable source bundle.
-
-## Findings and fixes
-
-### Resolved P1: address creation failed in the HTTP preview
-- Evidence: browser console reported `crypto.randomUUID is not a function` on Save address.
-- Fix: replace the secure-context-dependent API with a local demo address identifier.
-- Retest: saved fictional address, edited it, selected it for shipping, and completed checkout successfully.
-
-### Resolved P2: mobile hero photo reduced headline readability
-- Evidence: `lekhan-mobile-home.jpg` showed dark notebook imagery behind dark headline/body copy.
-- Fix: stack the phone hero's copy above the product photograph and separate editorial-tile captions from photos.
-- Retest: `qa/mobile-home.jpg`, captured after the fix, shows fully readable copy and CTA on a flat pale-blue surface. Inspected in `qa/responsive-review.jpg`.
-
-### Resolved P2: desktop vertical rhythm drift
-- Evidence: initial combined comparison `qa/desktop-comparison.jpg` showed category and featured-product sections lower than the visual target.
-- Fix: reduce desktop trust-strip padding, reduce category-photo diameters, tighten section margins, and increase section heading weight/scale.
-- Retest: combined final `qa/desktop-comparison-v2.jpg` inspected. Homepage composition, split hero, stacked edits, trust row and category rhythm now follow the selected target. Longer real catalog names account for minor product-card differences.
-
-### Resolved P2: checkout revisit retained a later step
-- Fix: reset checkout to Delivery on route entry, retaining saved address and cart.
-- Retest: Cart → Checkout starts at Delivery; continuing reaches Shipping and Payment.
-
-### Resolved accessibility issue: skip link conflicted with hash routing
-- Fix: prevent route mutation; focus and scroll to the main landmark instead.
+- Source visual: `/workspace/scratch/d11cbd8da2c4/upload/image(20261024-161404).png`, 736 × 1104 pixels.
+- Intent: adopt the supplied reference's taste across the existing Lekhan experience, preserving its actual catalog and working shopping journey. This is a redesign, not a pixel-for-pixel Paperly clone.
+- Browser implementation: running Vite app opened in the cloud browser. Desktop viewport 1363 × 936 CSS pixels; visible content width varies with the vertical scrollbar.
+- Full composition capture: a 1440 × 2450 CSS-pixel frame at scale 0.35. Screenshot `/workspace/scratch/warm-home-comparison-frame.jpg`; crop is 504 × 858 pixels.
+- Density normalization: source proportionally resized to 504 × 756. Both placed side-by-side in `qa/warm/comparison.jpg` and opened together. Source and implementation are full desktop compositions at the same normalized width; the implementation is intentionally taller to accommodate existing catalog navigation and real product names. No aspect-ratio stretching.
+- Desktop evidence: `qa/warm/home-desktop.jpg`, `collection.jpg`, `product.jpg`, `cart.jpg`, `confirmation.jpg`, `order.jpg`, `account.jpg`, `addresses.jpg`, `login.jpg`, `register.jpg`, `categories.jpg`, `search.jpg`, `wishlist.jpg`, `orders.jpg`.
+- Cross-screen review: `qa/warm/screens.jpg`, opened and inspected together.
+- Focused surfaces: homepage hero was viewed at normal desktop scale, and collection, account, confirmation and phone product/cart/checkout were inspected individually. They expose readable controls, type, spacing, photo crops and states beyond the reduced full-composition comparison.
 
 ## Required fidelity surfaces
 
-- Fonts / typography: Manrope display and DM Sans UI match the selected geometric sans direction. Hero uses the intended three-line hierarchy, navy copy, mustard final line. Page headings, short form labels, body text, prices and semantic feedback remain consistent. Exact generated letterforms are approximate; implementation fonts are real, usable web fonts.
-- Spacing / rhythm: desktop hero approximately 2:1 split; right panels stack evenly. Category photos sit in an even six-column row on desktop, three columns on mobile. Collection grid, checkout summary and account layouts adapt to narrower frames.
-- Colors / tokens: navy #10274c, pale blue surfaces, restrained mustard and white. Semantic green/red used for success/errors. Borders are light; elevation is limited to search suggestions and toast.
-- Images / assets: three generated photographs match the selected art direction. Real catalog imagery replaces the concept's generic category/product photos intentionally to preserve accurate reference products. No handcrafted SVG, div art, emoji, or placeholder drawings replace assets. Icons use Phosphor. Logos are typographic wordmarks, as in the selected direction.
-- Copy / content: homepage hierarchy and major copy follow option 2. Remaining customer pages extend the same tone. Actual product names and prices are preserved. Demo/payment/account limits are explicit where relevant. Full product angles were unavailable; the gallery uses front and close-up crop.
+1. **Fonts and typography:** DM Serif Display for editorial headings and DM Sans for UI. The reference's dark serif headline and coral italic emphasis are reproduced with real web fonts. Form, product, account and checkout headings use the same family. Product names and form fields remain sans serif. Long reference catalog names wrap rather than truncate essential information.
+2. **Spacing and layout:** full-width sunlit hero, category cards, paired editorial promotions, bestseller row, benefits section, audience collections and forest-green newsletter follow the source's structure. The original six shopping categories are retained rather than inventing the reference's eight. Responsive pages stack their sections and keep controls accessible.
+3. **Color tokens:** ivory backgrounds, forest-green text, sage selection surfaces and restrained coral buttons replace the prior blue/yellow system throughout every customer page. Secondary text was darkened consistently during implementation to avoid pale green foregrounds. Buttons, fields, borders, success/error states and footer use coordinated colors.
+4. **Image quality and assets:** three new generated photographs match the warm, sunlit stationery art direction. Hero and promotion copy is real editable UI, not a screenshot. Actual catalog product packaging remains accurate even where it contains blue or bright colors. Phosphor supplies the icon system; no handcrafted illustration or CSS art substitutes for photos or icons.
+5. **Copy and content:** homepage copy follows the requested visual tone. The brand remains Lekhan, not Paperly. Unsupported source claims such as customer counts, sustainable materials, or real secure payment processing are not added. Checkout and account simulation notices remain explicit.
 
-## Interaction checks
+## Findings and fixes
 
-Verified in the cloud browser:
+- Resolved: potential pale-green text contrast drift across secondary pages. A final semantic foreground layer establishes dark forest headings, readable muted body text, and clear coral actions.
+- Resolved: hidden line breaks joined words in responsive homepage headings. Added real spaces around the break boundaries and checked the rendered layout.
+- No unresolved P0/P1/P2 findings in the reviewed screens.
+- P3: catalog packaging is visually busier than the reference's pastel product photography. It is retained intentionally to keep products accurate.
+- P3: the top strip and small benefit captions are compact; a further accessibility polish pass can simplify these on the smallest devices.
 
-- Category links, subcategory selection, sorting low-to-high, pagination and filter reset.
-- Search suggestions, search results and no-results state.
-- Notebook Plain variant, quantity selection, wishlist save, add to cart.
-- Cart quantity recalculation: 3 × ₹295 = ₹885; WELCOME10 gives ₹89 off; standard total ₹796; express total ₹895.
-- Invalid coupon error followed by successful coupon recovery.
-- Address create and edit, saved selection, checkout progression.
-- Standard and express delivery choices.
-- Simulated failed payment with visible retryable error, then successful UPI simulation.
-- Successful order confirmation; cart cleared; order retained in history and detail view.
-- Registration and sign-in screens; one-click demo account; profile edit.
-- Mobile menu, mobile filter panel and in-stock checkbox.
-- Empty cart, no results and image error/retry components are implemented; no real payment or message was sent.
-- Loading state exercised during simulated payment; primary button disabled to prevent duplicate placement.
-- Browser console checked. The address exception was fixed and retested. Remaining observed errors are from the browser's extension metadata sender, outside the application.
+## Interaction verification
 
-## Responsive review
+Tested in the cloud browser against the redesigned application:
 
-- Phone: 390 × 844 frame, inner content width 375 with scrollbar. Home, collection, product and checkout captured and inspected. Collection and checkout body scrollWidth = clientWidth = 375.
-- Tablet: 834 × 900 frame, inner content width 819. Collection captured and inspected; body scrollWidth = clientWidth = 819.
-- Desktop: normal cloud-browser preview plus matched-width source comparison.
-- These are browser-frame responsive checks, not native device or touch-emulation checks. Actual mobile reference inspection and native mobile testing remain pending per the user's accepted limitation.
+- Homepage bestseller category tabs change the shown products.
+- Header navigation, category links, collection sort and availability filtering.
+- Plain notebook variant, quantity two, save to wishlist, and add to cart.
+- Cart: 2 × ₹295 = ₹590, WELCOME10 = ₹59 discount, standard shipping free, total ₹531.
+- Checkout address creation with fictional data; standard/express selection; express total ₹630.
+- Simulated failed payment produces a retryable error. Disabling failure and retrying creates confirmation, clears the cart, and retains the order in history.
+- Order details and history navigation.
+- Demo account entry, profile layout, saved address edit and persistence.
+- Sign-in and registration screens, search results and empty results, wishlist.
+- Phone navigation menu, mobile filters, product-to-cart navigation and checkout entry.
+- Browser application console: no errors from the local app were observed in the checked logs.
 
-## Validation
+## Responsive evidence
 
-- `npx tsc --noEmit`: passed.
-- `npm run build`: passed.
-- `npm run test:sites`: 4/4 passed.
+- Phone frame 390 × 844; inner content width 375 with scrollbar. Home, product, cart and checkout screenshots opened in `qa/warm/mobile-screens.jpg`.
+- Mobile collection and checkout: scrollWidth equals clientWidth (375).
+- Tablet frame 834 × 900; collection inspected and captured. scrollWidth equals clientWidth (819 with scrollbar).
+- These are browser-frame responsive checks, not native touch-device acceptance tests.
 
-## Follow-up polish (P3)
+## Validation and handoff
 
-- Real catalog packaging differs from the simpler concept photography.
-- Small background-tone seam in the desktop hero can be refined with a future full-width photograph.
-- Native touch/mobile testing and keyboard-only audit are useful before production.
-
-## Handoff checklist
-
-- All requested customer pages implemented and linked.
-- Simulated checkout completes through confirmation and order history.
-- No unresolved P0/P1/P2 findings.
-- Local preview remains running; deployment not performed.
+- TypeScript check passed.
+- Production build and hosting-worker tests run before publication.
+- Existing public Site identity and audience preserved.
+- All twelve requested customer page groups share the new visual system; no real payment service was connected or charged.
+- QA screenshots are internal evidence, not added to the downloadable source package.
