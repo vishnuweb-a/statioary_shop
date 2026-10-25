@@ -1,1 +1,32 @@
-<!doctype html><html><head><title>Lekhan responsive review</title><style>body{margin:0;background:#fff}iframe{border:0;display:block}</style></head><body><iframe title="Storefront preview"></iframe><script>const p=new URLSearchParams(location.search),f=document.querySelector('iframe');f.width=p.get('width')||'390';f.height=p.get('height')||'844';f.src='/#'+(p.get('route')||'/');const scale=Number(p.get('scale')||1); f.style.transform='scale('+scale+')'; f.style.transformOrigin='top left'; f.style.position='absolute';document.body.style.width=(Number(f.width)*scale)+'px';document.body.style.height=(Number(f.height)*scale)+'px';</script></body></html>
+<!doctype html>
+<html>
+  <head>
+    <title>StationeryBazaar responsive review</title>
+    <style>
+      body {
+        margin: 0;
+        background: #fff;
+      }
+      iframe {
+        border: 0;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe title="Storefront preview"></iframe>
+    <script>
+      const p = new URLSearchParams(location.search),
+        f = document.querySelector("iframe");
+      f.width = p.get("width") || "390";
+      f.height = p.get("height") || "844";
+      f.src = "/#" + (p.get("route") || "/");
+      const scale = Number(p.get("scale") || 1);
+      f.style.transform = "scale(" + scale + ")";
+      f.style.transformOrigin = "top left";
+      f.style.position = "absolute";
+      document.body.style.width = Number(f.width) * scale + "px";
+      document.body.style.height = Number(f.height) * scale + "px";
+    </script>
+  </body>
+</html>
