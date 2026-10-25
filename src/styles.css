@@ -113,7 +113,8 @@ svg {
   vertical-align: middle;
 }
 input:not([type="radio"]):not([type="checkbox"]):not([type="range"]),
-select {
+select,
+textarea {
   border: 1px solid #e3dfd6;
   background: #fff;
   border-radius: 5px;
@@ -1363,7 +1364,8 @@ details > p {
   font-size: 12px;
 }
 .form-grid input,
-.form-grid select {
+.form-grid select,
+.form-grid textarea {
   font-size: 12px;
 }
 .form-grid .wide {

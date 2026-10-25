@@ -1183,7 +1183,8 @@ summary {
   color: #6e795f;
 }
 .form-grid input,
-.form-grid select {
+.form-grid select,
+.form-grid textarea {
   background: #faf9f0 !important;
   border-color: #e3e4d1 !important;
   color: #6e795f !important;
@@ -1486,8 +1487,8 @@ footer {
   padding-top: 31px;
 }
 .footer-grid {
-  grid-template-columns: 1.2fr 0.9fr 0.9fr 1.25fr;
-  gap: 50px;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr 1.25fr;
+  gap: 40px;
 }
 .footer-grid .brand {
   font-size: 26px;
@@ -2875,5 +2876,42 @@ footer {
   }
   .warm-promo > div {
     max-width: 64%;
+  }
+}
+
+/* Info & policy pages */
+.help-grid ul {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #6e795f;
+}
+.help-grid .effective {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  margin-bottom: 26px;
+}
+.help-box {
+  align-self: start;
+}
+.contact-form {
+  margin-bottom: 26px;
+}
+.contact-form textarea {
+  font: inherit;
+  resize: vertical;
+}
+.contact-form .button {
+  grid-column: span 2;
+  justify-self: start;
+}
+@media (max-width: 600px) {
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+  .contact-form .wide,
+  .contact-form .button {
+    grid-column: auto;
   }
 }

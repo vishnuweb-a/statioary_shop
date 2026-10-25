@@ -47,6 +47,7 @@ import {
   money,
   products,
 } from "./data";
+import { infoPages } from "./policies";
 import { AddressForm, Card, Empty, Link, Photo, Quantity, SectionTitle } from "./components";
 
 function useSaved<T>(key: string, initial: T) {
@@ -66,6 +67,7 @@ function useSaved<T>(key: string, initial: T) {
   }, [key, v]);
   return [v, set] as const;
 }
+const baseTitle = document.title;
 function go(path: string) {
   location.hash = path;
 }
@@ -81,6 +83,7 @@ export function App() {
   }, []);
   const [path, query = ""] = route.split("?");
   const params = new URLSearchParams(query);
+  const info = infoPages[path];
   const [cart, setCart] = useSaved<Line[]>("cart", []),
     [wishlist, setWishlist] = useSaved<string[]>("wishlist", []),
     [addresses, setAddresses] = useSaved<Address[]>("addresses", []),
@@ -128,6 +131,9 @@ export function App() {
     setMaxPrice(1500);
     setOnlyStock(false);
   }, [route]);
+  useEffect(() => {
+    document.title = info ? `${info.title} | ${company.brand}` : baseTitle;
+  }, [info]);
   useEffect(() => {
     if (toast) {
       const t = setTimeout(() => setToast(""), 3200);
@@ -989,6 +995,8 @@ export function App() {
                 ? "Shop"
                 : path === "/auth"
                   ? "Account"
+                  : info
+                    ? info.title
                   : path.slice(1).split("/")[0].replace("-", " ") || "Home"}
             </span>
             {selectedProduct && (
@@ -2073,41 +2081,88 @@ export function App() {
               </div>
             </>
           )}
-          {path === "/help" && (
+          {info && (
             <>
               <div className="page-intro">
-                <small className="eyebrow">A LITTLE HELP, WHEN YOU NEED IT</small>
-                <h1>We're here for your next chapter.</h1>
-                <p>Thoughtful answers for a smoother shopping experience.</p>
+                <small className="eyebrow">{info.eyebrow}</small>
+                <h1>{info.title}</h1>
+                <p>{info.intro}</p>
               </div>
               <div className="help-grid">
                 <section>
-                  <h2>Shipping & delivery</h2>
-                  <p>
-                    Standard delivery takes 4–6 business days. Orders ₹499 and above ship free;
-                    otherwise ₹49. Express delivery is ₹99.
-                  </p>
-                  <h2>Returns, with care</h2>
-                  <p>
-                    Unused products in their original packaging can be returned within 7 days of
-                    delivery.
-                  </p>
-                  <h2>Bulk orders</h2>
-                  <p>
-                    Building kits for your classroom or team? Write to us at {company.email} or
-                    call {company.phone} for institutional pricing.
-                  </p>
+                  {info.effective && <p className="effective">Effective {info.effective}</p>}
+                  {info.sections.map((s) => (
+                    <div key={s.h}>
+                      <h2>{s.h}</h2>
+                      {s.body.map((b, i) =>
+                        typeof b === "string" ? (
+                          <p key={i}>{b}</p>
+                        ) : (
+                          <ul key={i}>
+                            {b.map((li) => (
+                              <li key={li}>{li}</li>
+                            ))}
+                          </ul>
+                        ),
+                      )}
+                    </div>
+                  ))}
                 </section>
                 <aside className="help-box">
                   <Envelope size={32} />
-                  <h2>Get in touch.</h2>
-                  <p>
-                    <a href={"mailto:" + company.email}>{company.email}</a>
-                    <br />
-                    <a href={company.phoneHref}>{company.phone}</a>
-                    <br />
-                    {company.hours}
-                  </p>
+                  <h2>{path === "/contact" ? "Send us a message." : "Get in touch."}</h2>
+                  {path === "/contact" ? (
+                    <form
+                      className="form-grid contact-form"
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        const f = new FormData(e.currentTarget);
+                        // No backend: hand the message to the shopper's mail app so nothing is silently lost.
+                        location.href = `mailto:${company.email}?subject=${encodeURIComponent(
+                          `${f.get("subject")}${f.get("order") ? ` (Order ${f.get("order")})` : ""}`,
+                        )}&body=${encodeURIComponent(`${f.get("message")}\n\n${f.get("name")}\n${f.get("phone")}`)}`;
+                      }}
+                    >
+                      <label>
+                        Name
+                        <input name="name" required autoComplete="name" />
+                      </label>
+                      <label>
+                        Phone
+                        <input name="phone" type="tel" autoComplete="tel" />
+                      </label>
+                      <label>
+                        Subject
+                        <select name="subject" required>
+                          <option>Order enquiry</option>
+                          <option>Return or refund</option>
+                          <option>Bulk order</option>
+                          <option>Complaint</option>
+                          <option>Other</option>
+                        </select>
+                      </label>
+                      <label>
+                        Order ID (optional)
+                        <input name="order" />
+                      </label>
+                      <label className="wide">
+                        Message
+                        <textarea name="message" required rows={5} />
+                      </label>
+                      <button className="button" type="submit">
+                        Open in email app
+                        <ArrowRight size={18} />
+                      </button>
+                    </form>
+                  ) : (
+                    <p>
+                      <a href={"mailto:" + company.email}>{company.email}</a>
+                      <br />
+                      <a href={company.phoneHref}>{company.phone}</a>
+                      <br />
+                      {company.hours}
+                    </p>
+                  )}
                   <address>
                     {company.legalName}
                     {company.address.map((l) => (
@@ -2138,8 +2193,8 @@ export function App() {
             "/account",
             "/orders",
             "/order",
-            "/help",
           ].includes(path) &&
+            !info &&
             !path.startsWith("/product/") && (
               <Empty
                 icon={WarningCircle}
@@ -2175,10 +2230,17 @@ export function App() {
           </div>
           <div>
             <h3>Customer care</h3>
-            <Link to="/help">Shipping & delivery</Link>
-            <Link to="/help">Returns & refunds</Link>
+            <Link to="/about">About us</Link>
+            <Link to="/contact">Contact us</Link>
+            <Link to="/faqs">FAQs</Link>
             <Link to="/orders">Track your order</Link>
-            <Link to="/help">Bulk orders</Link>
+          </div>
+          <div>
+            <h3>Policies</h3>
+            <Link to="/shipping-policy">Shipping & delivery</Link>
+            <Link to="/refund-policy">Refund & cancellation</Link>
+            <Link to="/privacy-policy">Privacy policy</Link>
+            <Link to="/terms">Terms & conditions</Link>
           </div>
           <div>
             <h3>Contact us</h3>
